@@ -1,42 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For My Princesses</title>
-    <!-- Romantic Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>For My Princesses - Maryam & Sana</title>
+    <!-- Premium Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="heart-container"></div>
-    
+
     <div class="glass-container" id="main-card">
-        <h1 class="title">To My Dearest Maryam & Sana</h1>
-        
+        <h1 class="title">My Truest Apology</h1>
+
         <div class="message-container">
             <p id="typed-text"></p>
         </div>
 
         <div class="action-buttons hide" id="action-buttons">
-            <p class="question">Will you forgive me, my princesses?</p>
+            <p class="question">What is your answer, my princesses?</p>
             <div class="buttons">
-                <button class="btn btn-yes" id="btn-yes">Yes, we forgive you ❤️</button>
-                <button class="btn btn-no" id="btn-no">No 💔</button>
+                <button class="btn btn-apology" id="btn-apology">We Accept Your Apology ❤️</button>
+                <button class="btn btn-love" id="btn-love">We Accept Your Love 💞</button>
+                <button class="btn btn-reject" id="btn-reject">We Didn't Accept You 💔</button>
             </div>
         </div>
     </div>
 
-    <!-- Celebration Screen (hidden by default) -->
-    <div class="celebration-screen hide" id="celebration-screen">
-        <h1 class="celebration-title">Thank you! ✨</h1>
-        <p class="celebration-text">I love you both so much! My life is beautiful only because of you two.</p>
-        <div class="big-heart">❤️</div>
+    <!-- Modals / Popups -->
+    <div class="modal hide" id="modal-apology">
+        <div class="modal-content">
+            <h2>Thank You! ❤️</h2>
+            <p>Your forgiveness means everything to me. I promise to always keep you happy and cherish our bond. You
+                have healed my soul.</p>
+            <div class="modal-emojis">💖 ✨ 😍</div>
+            <button class="btn-close" onclick="closePopups()">Close</button>
+        </div>
+    </div>
+
+    <div class="modal hide" id="modal-love">
+        <div class="modal-content">
+            <h2>My Life is Complete! 💞</h2>
+            <p>My pure intentions are finally succeeding! I can't wait for the day we do Nikah and our souls unite
+                forever. I love you both so much!</p>
+            <div class="modal-emojis">💞 💍 ❤️</div>
+            <button class="btn-close" onclick="closePopups()">Close</button>
+        </div>
+    </div>
+
+    <div class="modal hide" id="modal-reject">
+        <div class="modal-content shamed">
+            <h2>Please Forgive Me... 😔</h2>
+            <p>I am drowning in guilt. My heart breaks at this thought. Please reconsider, my intentions are pure and my
+                love is real...</p>
+            <div class="modal-emojis">😔 🥺 😭</div>
+            <button class="btn-close" onclick="closePopups()">I will reconsider</button>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

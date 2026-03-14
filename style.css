@@ -1,9 +1,8 @@
-/* Base Styles & Romantic Gradient Background */
 :root {
-    --primary-color: #ff4b72;
-    --bg-gradient: linear-gradient(135deg, #2c0e22, #4a0d2a);
-    --glass-bg: rgba(255, 255, 255, 0.05);
-    --glass-border: rgba(255, 255, 255, 0.15);
+    --primary-color: #ff2a5f;
+    --bg-gradient: linear-gradient(135deg, #1a030c, #4a0d2a, #200412);
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.2);
     --text-color: #fdfdfd;
 }
 
@@ -19,11 +18,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: var(--text-color);
     overflow: hidden;
     position: relative;
     padding: 20px;
+    background-size: 200% 200%;
+    animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* Floating Hearts Background */
@@ -41,9 +56,9 @@ body {
     position: absolute;
     bottom: -10vh;
     font-size: 2rem;
-    animation: floatUp 10s linear infinite;
+    animation: floatUp 12s linear infinite;
     opacity: 0.6;
-    filter: drop-shadow(0 0 10px rgba(255, 75, 114, 0.5));
+    filter: drop-shadow(0 0 15px rgba(255, 42, 95, 0.6));
 }
 
 @keyframes floatUp {
@@ -51,213 +66,280 @@ body {
         transform: translateY(0) scale(0.5) rotate(0deg);
         opacity: 0;
     }
+
     20% {
-        opacity: 0.8;
+        opacity: 0.9;
     }
+
     100% {
-        transform: translateY(-120vh) scale(1.5) rotate(360deg);
+        transform: translateY(-120vh) scale(1.8) rotate(360deg);
         opacity: 0;
     }
 }
 
-/* Premium Glassmorphism Card */
+/* Glassmorphism Card */
 .glass-container {
     background: var(--glass-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    border-radius: 24px;
-    padding: 3rem;
-    max-width: 800px;
+    border-radius: 30px;
+    padding: 3.5rem;
+    max-width: 850px;
     width: 100%;
     text-align: center;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.05);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 42, 95, 0.1);
     z-index: 10;
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1.5s ease forwards;
+    transform: scale(0.9);
+    animation: popInCard 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 25px;
 }
 
-@keyframes fadeInUp {
+@keyframes popInCard {
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1);
     }
 }
 
 /* Typography */
 .title {
-    font-family: 'Great Vibes', cursive;
+    font-family: 'Cinzel Decorative', cursive;
     font-size: 3.5rem;
-    color: #ffd8e4;
-    text-shadow: 0 0 15px rgba(255, 216, 228, 0.4);
+    color: #ffebf0;
+    text-shadow: 0 0 20px rgba(255, 42, 95, 0.8);
     margin-bottom: 10px;
 }
 
 .message-container {
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 12px;
-    padding: 24px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 30px;
     text-align: justify;
     text-align-last: center;
-    min-height: 200px; /* Space for the typing text */
+    min-height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 #typed-text {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #ffe6ee;
-    font-weight: 300;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    line-height: 1.9;
+    color: #ffebf0;
+    font-style: italic;
 }
 
-/* Blinking Cursor for Typing Effect */
 .cursor {
     display: inline-block;
     width: 2px;
-    background-color: #ffd8e4;
-    margin-left: 2px;
+    background-color: #ffebf0;
+    margin-left: 3px;
     animation: blink 0.8s infinite;
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
 }
 
 /* Interactive Elements */
 .action-buttons {
-    margin-top: 20px;
-    transition: opacity 1s ease;
+    transition: opacity 1.5s ease;
+    margin-top: 15px;
 }
 
 .question {
-    font-family: 'Great Vibes', cursive;
-    font-size: 2.5rem;
-    color: #ffd8e4;
-    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #ffebf0;
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 
 .buttons {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
-    position: relative;
-    height: 60px; /* fixed height for absolute positioning of No button */
+    gap: 15px;
 }
 
 .btn {
-    padding: 12px 30px;
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.1rem;
+    padding: 15px 25px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
     font-weight: 600;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     outline: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.btn-yes {
-    background: linear-gradient(135deg, #ff4b72, #ff7b93);
+.btn-apology {
+    background: linear-gradient(135deg, #ff2a5f, #ff7b93);
     color: white;
-    box-shadow: 0 8px 15px rgba(255, 75, 114, 0.3);
+    box-shadow: 0 10px 20px rgba(255, 42, 95, 0.4);
 }
 
-.btn-yes:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 12px 20px rgba(255, 75, 114, 0.5);
+.btn-love {
+    background: linear-gradient(135deg, #d81b60, #f06292);
+    color: white;
+    box-shadow: 0 10px 20px rgba(216, 27, 96, 0.4);
 }
 
-.btn-no {
-    background: rgba(255, 255, 255, 0.1);
+.btn-reject {
+    background: rgba(25, 25, 25, 0.6);
     color: #ffb3c6;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(5px);
-    position: absolute; /* Needed for dodging logic */
 }
 
-/* Utility to hide elements cleanly */
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.btn-apology:hover {
+    box-shadow: 0 15px 25px rgba(255, 42, 95, 0.6);
+}
+
+.btn-love:hover {
+    box-shadow: 0 15px 25px rgba(216, 27, 96, 0.6);
+}
+
+.btn-reject:hover {
+    background: rgba(50, 50, 50, 0.8);
+    color: white;
+}
+
 .hide {
     display: none !important;
 }
 
-/* Celebration Screen Styles */
-.celebration-screen {
-    position: absolute;
+/* Modals */
+.modal {
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 100;
-    background: var(--bg-gradient);
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 20px;
-}
-
-.celebration-title {
-    font-family: 'Great Vibes', cursive;
-    font-size: 5rem;
-    color: #fff;
-    text-shadow: 0 0 30px rgba(255, 75, 114, 0.8);
-    animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-}
-
-.celebration-text {
-    font-size: 1.5rem;
-    color: #ffe6ee;
-    margin-top: 20px;
-    max-width: 600px;
+    z-index: 100;
     opacity: 0;
-    animation: fadeIn 1s 0.5s ease forwards;
+    animation: fadeInModal 0.5s forwards;
 }
 
-.big-heart {
-    font-size: 8rem;
-    margin-top: 40px;
-    animation: heartbeat 1.5s infinite;
-    filter: drop-shadow(0 0 20px rgba(255, 75, 114, 0.6));
+.modal-content {
+    background: linear-gradient(135deg, #2c0e22, #4a0d2a);
+    border: 2px solid var(--primary-color);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(255, 42, 95, 0.4);
+    transform: scale(0.8);
+    animation: popInModal 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    15% { transform: scale(1.3); }
-    30% { transform: scale(1); }
-    45% { transform: scale(1.15); }
-    60% { transform: scale(1); }
+.modal-content.shamed {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-color: #533483;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
 }
 
-@keyframes popIn {
-    0% { transform: scale(0.5); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+.modal-content h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: 2.2rem;
+    color: #ffebf0;
+    margin-bottom: 15px;
 }
 
-@keyframes fadeIn {
-    to { opacity: 1; }
+.modal-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 25px;
 }
 
-/* Responsive Design */
+.modal-emojis {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    letter-spacing: 15px;
+}
+
+.btn-close {
+    padding: 10px 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+@keyframes fadeInModal {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes popInModal {
+    to {
+        transform: scale(1);
+    }
+}
+
 @media (max-width: 768px) {
     .title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
+
     .glass-container {
         padding: 2rem 1.5rem;
     }
+
     #typed-text {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
+
     .question {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
     }
 }
