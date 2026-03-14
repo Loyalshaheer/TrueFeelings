@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Princesses</title>
+    <!-- Romantic Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="heart-container"></div>
+    
+    <div class="glass-container" id="main-card">
+        <h1 class="title">To My Dearest Maryam & Sana</h1>
+        
+        <div class="message-container">
+            <p id="typed-text"></p>
+        </div>
+
+        <div class="action-buttons hide" id="action-buttons">
+            <p class="question">Will you forgive me, my princesses?</p>
+            <div class="buttons">
+                <button class="btn btn-yes" id="btn-yes">Yes, we forgive you ❤️</button>
+                <button class="btn btn-no" id="btn-no">No 💔</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Celebration Screen (hidden by default) -->
+    <div class="celebration-screen hide" id="celebration-screen">
+        <h1 class="celebration-title">Thank you! ✨</h1>
+        <p class="celebration-text">I love you both so much! My life is beautiful only because of you two.</p>
+        <div class="big-heart">❤️</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
