@@ -7,7 +7,7 @@
     <title>For My Princesses - Maryam & Sana</title>
     <!-- Premium Google Fonts -->
     <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Playfair+Display:ital,wght@0,600;1,600&family=Poppins:wght@300;400;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Noto+Nastaliq+Urdu:wght@400;700&family=Poppins:wght@400;600;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -25,24 +25,13 @@
         <div class="action-buttons hide" id="action-buttons">
             <p class="question">What is your answer, my princesses?</p>
             <div class="buttons">
-                <button class="btn btn-apology" id="btn-apology">We Accept Your Apology ❤️</button>
                 <button class="btn btn-love" id="btn-love">We Accept Your Love 💞</button>
-                <button class="btn btn-reject" id="btn-reject">We Didn't Accept You 💔</button>
+                <button class="btn btn-reject" id="btn-reject">We Do Not 💔</button>
             </div>
         </div>
     </div>
 
     <!-- Modals / Popups -->
-    <div class="modal hide" id="modal-apology">
-        <div class="modal-content">
-            <h2>Thank You! ❤️</h2>
-            <p>Your forgiveness means everything to me. I promise to always keep you happy and cherish our bond. You
-                have healed my soul.</p>
-            <div class="modal-emojis">💖 ✨ 😍</div>
-            <button class="btn-close" onclick="closePopups()">Close</button>
-        </div>
-    </div>
-
     <div class="modal hide" id="modal-love">
         <div class="modal-content">
             <h2>My Life is Complete! 💞</h2>
@@ -50,16 +39,6 @@
                 forever. I love you both so much!</p>
             <div class="modal-emojis">💞 💍 ❤️</div>
             <button class="btn-close" onclick="closePopups()">Close</button>
-        </div>
-    </div>
-
-    <div class="modal hide" id="modal-reject">
-        <div class="modal-content shamed">
-            <h2>Please Forgive Me... 😔</h2>
-            <p>I am drowning in guilt. My heart breaks at this thought. Please reconsider, my intentions are pure and my
-                love is real...</p>
-            <div class="modal-emojis">😔 🥺 😭</div>
-            <button class="btn-close" onclick="closePopups()">I will reconsider</button>
         </div>
     </div>
 

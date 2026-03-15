@@ -107,33 +107,38 @@ body {
 
 /* Typography */
 .title {
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: 'Montserrat', sans-serif;
     font-size: 3.5rem;
-    color: #ffebf0;
-    text-shadow: 0 0 20px rgba(255, 42, 95, 0.8);
-    margin-bottom: 10px;
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(255, 42, 95, 0.8), 0 0 40px rgba(255, 42, 95, 0.4);
+    margin-bottom: 15px;
 }
 
 .message-container {
-    background: rgba(0, 0, 0, 0.3);
-    border-radius: 15px;
-    padding: 30px;
-    text-align: justify;
-    text-align-last: center;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    padding: 35px;
+    text-align: center;
     min-height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
 }
 
 #typed-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    line-height: 1.9;
-    color: #ffebf0;
-    font-style: italic;
+    font-family: 'Noto Nastaliq Urdu', serif;
+    font-size: 1.8rem;
+    line-height: 2.2;
+    font-weight: 700;
+    color: #ffffff;
+    direction: rtl;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .cursor {
@@ -163,68 +168,80 @@ body {
 }
 
 .question {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
-    color: #ffebf0;
+    color: #ffffff;
     margin-bottom: 25px;
-    font-weight: 600;
+    font-weight: 800;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
 }
 
 .buttons {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
+    position: relative;
+    min-height: 60px;
 }
 
 .btn {
-    padding: 15px 25px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
+    padding: 15px 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
     border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     outline: none;
     text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.btn-apology {
-    background: linear-gradient(135deg, #ff2a5f, #ff7b93);
-    color: white;
-    box-shadow: 0 10px 20px rgba(255, 42, 95, 0.4);
+    letter-spacing: 1.5px;
 }
 
 .btn-love {
-    background: linear-gradient(135deg, #d81b60, #f06292);
+    background: linear-gradient(135deg, #ff0844, #ffb199);
     color: white;
-    box-shadow: 0 10px 20px rgba(216, 27, 96, 0.4);
+    box-shadow: 0 10px 20px rgba(255, 8, 68, 0.4);
+    animation: pulseLove 2s infinite;
+}
+
+@keyframes pulseLove {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 10px 20px rgba(255, 8, 68, 0.4);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 15px 30px rgba(255, 8, 68, 0.6);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 10px 20px rgba(255, 8, 68, 0.4);
+    }
 }
 
 .btn-reject {
-    background: rgba(25, 25, 25, 0.6);
-    color: #ffb3c6;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
 }
 
 .btn:hover {
     transform: translateY(-5px) scale(1.05);
 }
 
-.btn-apology:hover {
-    box-shadow: 0 15px 25px rgba(255, 42, 95, 0.6);
-}
-
 .btn-love:hover {
-    box-shadow: 0 15px 25px rgba(216, 27, 96, 0.6);
+    box-shadow: 0 20px 40px rgba(255, 8, 68, 0.8);
+    animation: none;
+    transform: scale(1.1);
 }
 
 .btn-reject:hover {
-    background: rgba(50, 50, 50, 0.8);
-    color: white;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .hide {
@@ -261,16 +278,11 @@ body {
     animation: popInModal 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-.modal-content.shamed {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    border-color: #533483;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-}
-
 .modal-content h2 {
-    font-family: 'Cinzel Decorative', cursive;
-    font-size: 2.2rem;
-    color: #ffebf0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #ffffff;
     margin-bottom: 15px;
 }
 
